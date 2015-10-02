@@ -10,7 +10,7 @@ void display(int *ptr,int front, int back){
 int partition(int *ptr,int front, int back){
 	int pindex,i,temp;
 
-	//put pivot logic(start, middle, end), this case chooses the end.
+	//change pivot logic(start, middle, end) here, this case chooses middle.
 	int pivot = (back+front)/2;
 		
 	pindex=front;
@@ -34,19 +34,11 @@ int partition(int *ptr,int front, int back){
 		
 	}
 	
-	//swap pivot with pindex
-	if(*(ptr+pindex)<=*(ptr+pivot)){
-		temp = *(ptr+pindex);
-		*(ptr+pindex)=*(ptr+pivot);
-		*(ptr+pivot)=temp;
-		pivot=pindex-1;
-	}
-	if(*(ptr+pindex)>*(ptr+pivot)){
-		temp = *(ptr+pindex-1);
-		*(ptr+pindex-1)=*(ptr+pivot);
-		*(ptr+pivot)=temp;
-		pivot=pindex-1;
-	}
+	//Swaping pivot to correct position
+	temp = *(ptr+pindex-1);
+	*(ptr+pindex-1)=*(ptr+pivot);
+	*(ptr+pivot)=temp;
+	pivot=pindex-1;
 	
 	printf("\n\n\ni:%d\n",i);
 	printf("pivot index:%d, pivot value:%d\n",pivot,*(ptr+pivot));
