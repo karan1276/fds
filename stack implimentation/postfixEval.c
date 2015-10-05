@@ -119,7 +119,7 @@ main(){
 	for(i=0;i<length;i++){
 		//display(ptr);
 		if(isalnum(postfixExp[i])){
-			t1=(int)postfixExp[i] -'0';
+			t1=postfixExp[i] -'0';
 			push(t1,ptr);
 		}
 		else{

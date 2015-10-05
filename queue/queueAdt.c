@@ -42,6 +42,7 @@ int empty(queue *ptr){
 int remove(queue *ptr){
 	if(empty(ptr)){
 		printf("Queue is empty, nothing to remove");
+		ptr->front=ptr->back=-1;
 	}
 	else{
 		ptr->front++;
@@ -54,6 +55,14 @@ int top(queue *ptr){
 	}
 	else{
 		return ptr->data[ptr->front];
+	}
+}
+int full(queue *ptr){
+	if(ptr->back==MAX){
+		return 1;
+	}
+	else{
+		return 0;
 	}
 }
 
