@@ -20,8 +20,6 @@ int full(queue *ptr){
 		return 0;
 	}
 }
-
-
 void insert(queue *ptr, int elem){
 	if(full(ptr)){
 		printf("Queue is full, insertion not performed");
@@ -39,7 +37,7 @@ int empty(queue *ptr){
 		return 0;
 	}
 }
-int remove(queue *ptr){
+int delete(queue *ptr){
 	if(empty(ptr)){
 		printf("Queue is empty, nothing to remove");
 		ptr->front=ptr->back=-1;
@@ -57,15 +55,6 @@ int top(queue *ptr){
 		return ptr->data[ptr->front];
 	}
 }
-int full(queue *ptr){
-	if(ptr->back==MAX){
-		return 1;
-	}
-	else{
-		return 0;
-	}
-}
-
 void display(queue *ptr){
 	int i,j;
 	printf("Content of queue is:\n");
