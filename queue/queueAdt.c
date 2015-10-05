@@ -31,6 +31,31 @@ void insert(queue *ptr, int elem){
 		ptr->data[ptr->back]=elem;
 	}
 }
+int empty(queue *ptr){
+	if(ptr->back==ptr->front){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+int remove(queue *ptr){
+	if(empty(ptr)){
+		printf("Queue is empty, nothing to remove");
+	}
+	else{
+		ptr->front++;
+		return ptr->data[ptr->front-1];
+	}
+}
+int top(queue *ptr){
+	if(empty(ptr)){
+		printf("Queue is empty, nothing to remove");
+	}
+	else{
+		return ptr->data[ptr->front];
+	}
+}
 
 void display(queue *ptr){
 	int i,j;
